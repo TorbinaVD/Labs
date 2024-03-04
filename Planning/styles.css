@@ -1,0 +1,144 @@
+body {
+    font-family: Gabriola;
+    text-align: center;
+    background-color: #9cb3b0;
+  }
+  .header {
+    font-family: Gabriola;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    margin-left: 0px;
+    border-left: 3px solid #BED1CF;
+    border-right: 2px solid #BED1CF;
+    border-bottom: 6px solid #BED1CF;
+    background-color: #BED1CF;
+  }
+  
+  .footer{
+    font-family: Gabriola;
+    position: absolute;
+    bottom: 0px;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    margin-left: 0px;
+    border-top: 3px solid #BED1CF;
+    font-size: 23px;
+    color:#2a5046;
+    background-color: #9cb3b0;
+  }
+
+  .filters{
+    font-family: Gabriola;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    border-top: 1px solid #BED1CF;
+    color: white;
+    margin-top: 3 px;
+    font-size: 30px;
+  }
+a{
+  color:white;
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+  h1 {
+    padding-top:20px;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 50px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: 0px;
+    border: none;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    justify-content: space-between;
+  }
+
+  form input
+  {
+    width: 600px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    outline-color: #E78895;
+    padding-left:10px;
+    
+  }
+  
+  .task {
+    padding: 10px;
+    margin-left:25px;
+    margin-bottom: 5px;
+    background-color: #FFF7F1;
+  }
+  .task:hover
+  {
+    background-color: #e4c1a6;
+    color: #FFF7F1;
+  }
+  .task:nth-child(even) {
+    background-color:#FFE4C9;
+  }
+  
+  .task.complete {
+    text-decoration: line-through;
+    background-color: #9df0d7;
+    color:  #3e8b74;
+  }
+  .task.complete:hover {
+    
+    background-color: #58b198;
+    color: #9df0d7;
+
+  }
+  .task.complete:nth-child(even) {
+    background-color: #3e7c6b;
+  }
+
+ form button {
+    margin-left: 0px;
+    width: 100px;
+    height: 33px;
+    background-color: #f7e7cb;
+    border: 0;
+    border-radius: 5px;
+    
+  }
+form button:hover
+  {
+    background-color: #bba47c;
+    color:white;
+  }
+
+  .del button
+  {
+   position: absolute;
+    left:97%;
+  
+    width:20px;
+    height: 20px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+   
+    
+  }
+  .del button:hover
+  {
+    background-color:E78895;
+    color:white;
+  }
+  
+  

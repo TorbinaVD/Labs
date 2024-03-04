@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список Дел</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+      <h1>Список Дел</h1><br>
+      <div>
+      <form id="task-form">
+        <input type="text" id="task-input" placeholder="Новый элемент списка">
+        <button type="submit">Создать</button>
+        <button type="reset">Очистить все</button>
+      </form>
+      </div>    
+    </div>
+    <main>
+      <ul id="task-list">
+      </ul>
+    </main>
+    <div class="filters">
+      <a href="#" onclick="filterTODO('done')">Сделано</a>
+      <a href="#" onclick="filterTODO('not_done')">В процессе</a>
+      <a href="#" onclick="filterTODO('all')">Все</a>
+    </div>
+    <script src="script.js"></script>
+	<div class="footer">
+		<p>Copyright</p>
+	</div>
+</body>
+</html>
