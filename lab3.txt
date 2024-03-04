@@ -1,0 +1,136 @@
+// Задание 1
+let admin;
+let name = "Джон";
+admin = name;
+alert(admin);
+
+// Задание 2
+let a = +prompt("Первое число?", 1);
+let b = +prompt("Второе число?", 2);
+
+alert(a + b); // 3
+
+// Задание 3
+for (let i = 2; i <= 10; i += 2) {
+console.log(i);
+}
+
+// Задание 4
+let i = 0;
+while (i < 3) {
+alert(number ${i}!);
+i++;
+}
+
+// Задание 5
+let number;
+
+do {
+number = prompt("Введите число больше 100:", "");
+} while (number <= 100 && number !== null);
+
+// Задание 6
+let n = 10;
+
+nextNum:
+for (let i = 2; i <= n; i++) {
+for (let j = 2; j < i; j++) {
+if (i % j === 0) continue nextNum;
+}
+console.log(i);
+}
+
+
+
+// Задача 1
+// Вернуть число в обратном порядке
+function reverseNumber(num) {
+return parseInt(num.toString().split('').reverse().join(''));
+}
+
+console.log(reverseNumber(123)); // Вывод: 321
+
+// Вернуть число без повторяющихся цифр
+function removeDuplicates(num) {
+let unique = [...new Set(num.toString())];
+return parseInt(unique.join(''));
+}
+
+console.log(removeDuplicates(111333456)); // Вывод: 13456
+
+// Посчитать, сколько раз в данном числе встречается данная цифра
+function countDigitOccurrences(num, digit) {
+const digitStr = digit.toString();
+const numStr = num.toString();
+let count = 0;
+for (let i = 0; i < numStr.length; i++) {
+if (numStr[i] === digitStr) {
+count++;
+}
+}
+return count;
+}
+
+console.log(countDigitOccurrences(1355567, 5)); // Вывод: 3
+
+// Посчитать самую длинную последовательность нулей/единиц в двоичной записи числа
+function longestSequenceOfZeroesOrOnes(num) {
+const binaryStr = num.toString(2);
+let maxSeqLength = 0;
+let currentSeqLength = 1;
+for (let i = 1; i < binaryStr.length; i++) {
+if (binaryStr[i] === binaryStr[i - 1]) {
+currentSeqLength++;
+if (currentSeqLength > maxSeqLength) {
+maxSeqLength = currentSeqLength;
+}
+} else {
+currentSeqLength = 1;
+}
+}
+return maxSeqLength;
+}
+
+console.log(longestSequenceOfZeroesOrOnes(101100111011101)); // Вывод: 4
+
+// Задача 2
+// Найти самый первый неповторяющийся символ в строке
+function firstNonRepeatingCharacter(str) {
+let charMap = {};
+for (let char of str) {
+charMap[char] = (charMap[char] || 0) + 1;
+}
+for (let char of str) {
+if (charMap[char] === 1) {
+return char;
+}
+}
+return null;
+}
+
+console.log(firstNonRepeatingCharacter('фывфавыапрс')); // Вывод: 'п'
+
+// Сгенерировать строку заданной длины из случайных символов
+function generateRandomString(length) {
+const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let result = '';
+for (let i = 0; i < length; i++) {
+result += characters.charAt(Math.floor(Math.random() * characters.length));
+}
+return result;
+}
+
+console.log(generateRandomString(5)); // Вывод, например: '2fvg6'
+
+// Вернуть только уникальные символы строки
+function getUniqueCharacters(str) {
+let unique = '';
+for (let char of str) {
+if (str.indexOf(char) === str.lastIndexOf(char)) {
+unique += char;
+}
+}
+return unique;
+}
+
+console.log(getUniqueCharacters('позволяеткопироватьтекстиз')); // Вывод: 'позвляеткираьс'

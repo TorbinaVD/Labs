@@ -1,0 +1,88 @@
+//Задача 1
+
+function findMaxDiff(arr) {
+    let maxDiff = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            let diff = Math.abs(arr[i] - arr[j]);
+            if (diff > maxDiff) {
+                maxDiff = diff;
+            }
+        }
+    }
+    return maxDiff;
+}
+
+function removeDuplicates(arr) {
+    return Array.from(new Set(arr));
+}
+
+function findDoneItems(arr) {
+    return arr.filter(obj => obj.idDone === true);
+}
+
+// Пример использования
+const arr = [
+    {id: 1, idDone: true},
+    {id: 2, idDone: false},
+    {id: 3, idDone: true}
+];
+
+console.log(findMaxDiff([1, 5, 3, 9, 2])); // Вывод: 8
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Вывод: [1, 2, 3, 4, 5]
+console.log(findDoneItems(arr)); // Вывод: [{id: 1, idDone: true}, {id: 3, idDone: true}]
+
+
+//Задача 2
+
+function findGreaterThan(arr, num) {
+    return arr.filter(item => item > num);
+}
+
+function flattenArray(arr) {
+    return arr.flat(Infinity);
+}
+
+// Пример использования
+console.log(findGreaterThan([1, 4, 6, 3, 2], 2)); // Вывод: [4, 6, 3]
+console.log(flattenArray([1, 4, [34, 1, 20], [6, [6, 12, 8], 6]])); // Вывод: [1, 4, 34, 1, 20, 6, 6, 12, 8, 6]
+
+
+//Задача 3
+
+function findPairs(arr) {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] === 0) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+function findTriples(arr) {
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            for (let k = j + 1; k < arr.length; k++) {
+                if (arr[i] + arr[j] + arr[k] === 0) {
+                    count++;
+                }
+            }
+        }
+    }
+    return count;
+}
+
+// Пример использования
+console.log(findPairs([-7, 12, 4, 6, -4, -12, 0])); // Вывод: 2
+console.log(findPairs([-1, 2, 4, 7, -4, 1, -2])); // Вывод: 3
+console.log(findTriples([-1, 1, 0, 1])); // Вывод: 1
+console.log(findTriples([-1, 1, -1, 1])); // Вывод: 2
+console.log(findTriples([1, 1, 1, 0, -1])); // Вывод: 1
+console.log(findTriples([0, 0])); // Вывод: 1
+console.log(findTriples([])); // Вывод: 0
+
+
