@@ -1,0 +1,112 @@
+// Посчитать максимум и минимум массива
+const arr = [1, 6, -1, 22, 13];
+const max = Math.max(...arr);
+const min = Math.min(...arr);
+console.log(Максимум: ${max}, Минимум: ${min});
+
+// Перевернуть строку задом наперёд
+const str = "!тевирП";
+const reversedStr = str.split("").reverse().join("");
+console.log(reversedStr);
+
+// Перевернуть введенную пользователем строку задом наперед
+const userInput = prompt("Введите строку:");
+const reversedUserInput = userInput.split("").reverse().join("");
+console.log(reversedUserInput);
+
+// Вычислить сумму квадратных корней для всех чётных чисел целочисленного массива
+const arr = [3, 5, 8, 13, 21, 42];
+const sumOfSqrt = arr.reduce((acc, num) => {
+if (num % 2 === 0) {
+acc += Math.sqrt(num);
+}
+return acc;
+}, 0);
+console.log(sumOfSqrt);
+
+//Функция для проверки, являются ли две строки анаграммой
+function anagram(str1, str2) {
+const normalizeString = (str) => str.toLowerCase().replace(/[\W_]/g, '').split('').sort().join('');
+
+return normalizeString(str1) === normalizeString(str2);
+}
+
+console.log(anagram("Лунь", "нуль")); // true
+console.log(anagram("Лунь", "ноль")); // false
+
+
+//Функция, которая проверяет, является ли строка палиндромом:
+function palindrome(str) {
+  const cleanStr = str.replace(/[^a-zA-Zа-яА-Я]/g, "").toLowerCase();
+  const reversedStr = cleanStr.split("").reverse().join("");
+  return cleanStr === reversedStr;
+}
+
+console.log(palindrome("Не гни папин ген")); // true
+console.log(palindrome("123")); // false
+
+
+//Функция для вывода чисел Фибоначчи:
+function fibonacci() {
+  let a = 0, b = 1;
+  console.log(a);
+  console.log(b);
+
+  setInterval(() => {
+    const next = a + b;
+    a = b;
+    b = next;
+    console.log(next);
+  }, 1000);
+}
+
+fibonacci();
+
+
+//Функция intersect для нахождения пересечения значений в двух массивах:
+function intersect(arrA, arrB) {
+  return arrA.filter(value => arrB.includes(value));
+}
+
+console.log(intersect([1, 2, 3], [2, 3, 4])); // [2, 3]
+
+
+//HTML и JS-код для кнопок "+" и "-":
+<div id="counter">
+  <button onclick="increment()">+</button>
+  <span id="value">0</span>
+  <button onclick="decrement()">-</button>
+</div>
+
+<script>
+  let value = 0;
+
+  function increment() {
+    value++;
+    document.getElementById("value").textContent = value;
+  }
+
+  function decrement() {
+    value--;
+    document.getElementById("value").textContent = value;
+  }
+</script>
+
+
+//Код, который выводит 4, 4, 4 и как его исправить:
+let i;
+for (i = 1; i <= 3; i++) {
+  setTimeout((value) => {
+    console.log(value);
+  }, 1000, i);
+}
+
+
+//Для того чтобы код вывел 1, 2, 3, можно использовать замыкание внутри цикла:
+for (let i = 1; i <= 3; i++) {
+  (function (value) {
+    setTimeout(() => {
+      console.log(value);
+    }, 1000 * value);
+  })(i);
+}

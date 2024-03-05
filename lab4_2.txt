@@ -1,0 +1,71 @@
+// Задача 1
+function* random(n, m) {
+while (true) {
+yield Math.floor(Math.random() * (m - n + 1) + n);
+}
+}
+
+function* padovan() {
+let a = 1, b = 1, c = 1;
+yield a;
+yield b;
+yield c;
+while (true) {
+const next = a + b;
+yield next;
+a = b;
+b = c;
+c = next;
+}
+}
+
+function* getPrimes() {
+let num = 2;
+while (true) {
+if (isPrime(num)) {
+yield num;
+}
+num++;
+}
+}
+
+function isPrime(num) {
+for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i++) {
+if (num % i === 0) return false;
+}
+return num > 1;
+}
+
+// Задача 2
+function countLetters(text) {
+const map = new Map();
+
+text.split("").forEach(char => {
+const count = map.has(char) ? map.get(char) + 1 : 1;
+map.set(char, count);
+});
+
+return map;
+}
+
+function getPrime(n) {
+let count = 0;
+let num = 2n;
+
+while (count < n) {
+if (isPrimeBigInt(num)) {
+count++;
+}
+num++;
+}
+
+return num-1n;
+}
+
+function isPrimeBigInt(num) {
+if (num < 2n) return false;
+for (let i = 2n, sqrt = num ** 0.5n; i <= sqrt; i++) {
+if (num % i === 0n) return false;
+}
+return true;
+}
